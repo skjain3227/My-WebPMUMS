@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ब्लॉक PMUMS Link - PMUMS शिक्षक संघ जिला शिवपुरी</title>
+    <!-- सरल और सुंदर डिज़ाइन के लिए बूटस्ट्रैप (Bootstrap 5) का उपयोग -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+        }
+        .card-header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            border-top-left-radius: 12px !important;
+            border-top-right-radius: 12px !important;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-header">
+            जिला शिवपुरी - PMUMS शिक्षक संघ
+        </div>
+        <div class="card-body p-4">
+            <div class="mb-3">
+                <label for="blockSelect" class="form-label fw-bold text-secondary">ब्लॉक का चयन करें:</label>
+                <select id="blockSelect" class="form-select form-select-lg">
+                    <option value="https://docs.google.com/spreadsheets/d/1Ml8_sLx9szmRnhIUfO_6HOg0fnfrjiY6zY8OMBmPseM/edit?usp=drivesdk">Shivpuri</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1yxSWY70zZjPTexbIcrbXLJ0Hvx_putZJS1fngUJ9q5w/edit?usp=drivesdk">Kolaras</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1xlsziUezR7POxDV6HE3k1350KpbOqDXsOE4yxuA_Rqc/edit?usp=drivesdk">Badarwas</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1yF7Z4cm7Ay6EHU9JH1U5Qiljb1ZNM9hp-PsmLlPtpSc/edit?usp=drivesdk">Karaira</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1jccTaBmbZRjwwpdt_pYYj41iKq-WtGQigVEcFyi0UVs/edit?usp=drivesdk">Khaniyadhana</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1o2b5PEnTUvCImpsxdpwFbbvqVfgM9lg1EcP5y4Oofx8/edit?usp=drivesdk">Pohri</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1Uw9Yss76Y4ud-UazKj1-jUzMpb9uAZGeWOhw2hMU_wU/edit?usp=drivesdk">Narvar</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1A_OOwntxsX9D62TtGV3eiTHs_LLRcP1i4iKC5qmpY4k/edit?usp=drivesdk">Pichhore</option>
+                </select>
+            </div>
+            <div class="d-grid mt-4">
+                <button onclick="openBlockSheet()" class="btn btn-primary btn-lg">🚀 OPEN BLOCK  </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openBlockSheet() {
+            var selectBox = document.getElementById("blockSelect");
+            var selectedUrl = selectBox.value;
+            if (selectedUrl) {
+                window.open(selectedUrl, '_blank');
+            }
+        }
+    </script>
+
+</body>
+</html>
