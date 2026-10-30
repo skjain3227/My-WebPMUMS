@@ -3,61 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ब्लॉक PMUMS Link - PMUMS शिक्षक कल्याण कोष मप्र </title>
-    <!-- सरल और सुंदर डिज़ाइन के लिए बूटस्ट्रैप (Bootstrap 5) का उपयोग -->
+    <meta name="theme-color" content="#f3f6f5">
+    <title>PMUMS शिक्षक कल्याण कोष | शिवपुरी</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            color-scheme: light;
+            --ink: #172d40;
+            --muted: #687985;
+            --green: #187b69;
+            --green-dark: #116454;
+            --line: #e4ebe8;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 32px 18px;
+            display: grid;
+            place-items: center;
+            color: var(--ink);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background:
+                radial-gradient(ellipse at 12% 12%, rgba(205, 231, 220, 0.62), transparent 34%),
+                radial-gradient(ellipse at 88% 90%, rgba(221, 231, 241, 0.7), transparent 32%),
+                #f3f6f5;
         }
-        .card {
-            border: none;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            border-radius: 16px;
-            width: 100%;
-            max-width: 650px;
+
+        .portal-card {
+            width: min(100%, 560px);
+            overflow: hidden;
+            border: 1px solid rgba(222, 231, 227, 0.9);
+            border-radius: 24px;
+            background: #fff;
+            box-shadow: 0 24px 70px rgba(27, 55, 69, 0.12);
         }
-        .card-header {
-            background-color: #b1c216;
-            color: white;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            border-top-left-radius: 16px !important;
-            border-top-right-radius: 16px !important;
-            padding: 20px;
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 32px;
+            color: #fff;
+            background: linear-gradient(120deg, #173b4c, #1a7666);
         }
-        .logo-img {
-            width: 110px;
-            height: 110px;
-            object-fit: contain;
-            margin-bottom: 15px;
+
+        .brand-logo {
+            width: 58px;
+            height: 58px;
+            flex: 0 0 auto;
+            padding: 3px;
             border-radius: 50%;
-            padding: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #fff;
+            object-fit: cover;
+        }
+
+        .brand-title {
+            margin: 0 0 4px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .brand-caption {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 0.82rem;
+        }
+
+        .card-content {
+            padding: 38px 42px 30px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            color: var(--green);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #36a78c;
+            content: "";
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--ink);
+            font-size: clamp(1.8rem, 6vw, 2.35rem);
+            font-weight: 750;
+            letter-spacing: -0.04em;
+        }
+
+        .intro {
+            margin: 12px 0 30px;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .form-label {
+            margin-bottom: 10px;
+            color: #344b59;
+            font-size: 0.94rem;
+            font-weight: 700;
+        }
+
+        .form-select {
+            min-height: 58px;
+            padding: 0.8rem 3rem 0.8rem 1rem;
+            border: 1px solid #dce5e1;
+            border-radius: 12px;
+            color: var(--ink);
+            font-size: 1rem;
+            box-shadow: none;
+        }
+
+        .form-select:focus {
+            border-color: #54a895;
+            box-shadow: 0 0 0 4px rgba(24, 123, 105, 0.12);
+        }
+
+        .open-button {
+            min-height: 58px;
+            margin-top: 20px;
+            border: 0;
+            border-radius: 12px;
+            color: #fff;
+            background: var(--green);
+            font-size: 1rem;
+            font-weight: 700;
+            transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+        }
+
+        .open-button:hover {
+            color: #fff;
+            background: var(--green-dark);
+            box-shadow: 0 8px 18px rgba(24, 123, 105, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .open-button:focus-visible {
+            outline: 3px solid rgba(24, 123, 105, 0.35);
+            outline-offset: 3px;
+        }
+
+        .card-footer {
+            padding: 18px 24px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            background: #fbfcfc;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 18px 14px;
+            }
+
+            .portal-card {
+                border-radius: 20px;
+            }
+
+            .brand-header {
+                gap: 12px;
+                padding: 20px;
+            }
+
+            .brand-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .brand-title {
+                font-size: 0.94rem;
+            }
+
+            .card-content {
+                padding: 30px 24px 26px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
         }
     </style>
 </head>
 <body>
+    <main class="portal-card">
+        <header class="brand-header">
+            <img src="logo.png" alt="PMUMS शिक्षक संघ का लोगो" class="brand-logo">
+            <div>
+                <p class="brand-title">PMUMS शिक्षक कल्याण कोष मप्र</p>
+                <p class="brand-caption">शिक्षक संघ शिवपुरी, मध्यप्रदेश</p>
+            </div>
+        </header>
 
-    <div class="card text-center">
-        <div class="card-header">
-            PMUMS शिक्षक कल्याण कोष मप्र
-        </div>
-        <div class="card-body p-5">
-            <!-- यहाँ अपनी लोगो की इमेज का नाम या लिंक डालें (जैसे: src="logo.png") -->
-            <img src="logo.png" alt="PMUMS Logo" class="logo-img" id="pmumsLogo">
-            <H1>PMUMS Application</H1>
-            <div class="mb-4 text-start">
-                <label for="blockSelect" class="form-label fw-bold text-secondary fs-5">ब्लॉक का चयन करें:</label>
-                <select id="blockSelect" class="form-select form-select-lg py-3">
+        <section class="card-content">
+            <div class="eyebrow">शिवपुरी जिला पोर्टल</div>
+            <h1>PMUMS Application</h1>
+            <p class="intro">अपने विकासखंड का चयन करें</p>
+
+            <div>
+                <label for="blockSelect" class="form-label">ब्लॉक का चयन करें</label>
+                <select id="blockSelect" class="form-select" aria-label="ब्लॉक का चयन करें">
                     <option value="https://docs.google.com/spreadsheets/d/1Ml8_sLx9szmRnhIUfO_6HOg0fnfrjiY6zY8OMBmPseM/edit?usp=drivesdk">Shivpuri</option>
                     <option value="https://docs.google.com/spreadsheets/d/1yxSWY70zZjPTexbIcrbXLJ0Hvx_putZJS1fngUJ9q5w/edit?usp=drivesdk">Kolaras</option>
                     <option value="https://docs.google.com/spreadsheets/d/1xlsziUezR7POxDV6HE3k1350KpbOqDXsOE4yxuA_Rqc/edit?usp=drivesdk">Badarwas</option>
@@ -67,22 +233,23 @@
                     <option value="https://docs.google.com/spreadsheets/d/1Uw9Yss76Y4ud-UazKj1-jUzMpb9uAZGeWOhw2hMU_wU/edit?usp=drivesdk">Narvar</option>
                     <option value="https://docs.google.com/spreadsheets/d/1A_OOwntxsX9D62TtGV3eiTHs_LLRcP1i4iKC5qmpY4k/edit?usp=drivesdk">Pichhore</option>
                 </select>
+                <button type="button" onclick="openBlockSheet()" class="btn open-button w-100">
+                    ब्लॉक की जानकारी देखें  <span aria-hidden="true">↗</span>
+                </button>
             </div>
-            <div class="d-grid mt-4">
-                <button onclick="openBlockSheet()" class="btn btn-primary btn-lg py-3">🚀 OPEN BLOCK</button>
-            </div>
-       PMUMS Team, Shivpuri </div>
-    </div>
+        </section>
+
+        <footer class="card-footer">PMUMS Team, Shivpuri</footer>
+    </main>
 
     <script>
         function openBlockSheet() {
             var selectBox = document.getElementById("blockSelect");
             var selectedUrl = selectBox.value;
             if (selectedUrl) {
-                window.open(selectedUrl, '_blank');
+                window.open(selectedUrl, "_blank", "noopener,noreferrer");
             }
         }
     </script>
-
 </body>
 </html>
