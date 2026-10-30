@@ -48,8 +48,8 @@
             align-items: center;
             gap: 16px;
             padding: 24px 32px;
-            color: #fff;
-            background: linear-gradient(120deg, #173b4c, #1a7666);
+            color: #263547;
+            background: #ff9933;
         }
 
         .brand-logo {
@@ -71,7 +71,7 @@
 
         .brand-caption {
             margin: 0;
-            color: rgba(255, 255, 255, 0.76);
+            color: rgba(38, 53, 71, 0.82);
             font-size: 0.82rem;
         }
 
@@ -136,15 +136,27 @@
             box-shadow: 0 0 0 4px rgba(24, 123, 105, 0.12);
         }
 
+        .block-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .block-actions .form-select {
+            min-width: 0;
+            flex: 1;
+        }
+
         .open-button {
             min-height: 58px;
-            margin-top: 20px;
+            flex: 0 0 auto;
+            padding: 0 18px;
             border: 0;
             border-radius: 12px;
             color: #fff;
             background: var(--green);
             font-size: 1rem;
             font-weight: 700;
+            white-space: nowrap;
             transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
         }
 
@@ -168,6 +180,30 @@
             font-size: 0.88rem;
             font-weight: 600;
             text-align: center;
+        }
+
+        .team-footer-box {
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: var(--green);
+            text-align: center;
+        }
+
+        .team-footer-title {
+            margin: 0;
+            padding: 10px 16px;
+            color: #fff;
+            background: var(--green-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .team-footer-credit {
+            margin: 0;
+            padding: 9px 16px;
+            color: #fff;
+            font-size: 0.82rem;
         }
 
         @media (max-width: 480px) {
@@ -196,6 +232,14 @@
             .card-content {
                 padding: 30px 24px 26px;
             }
+
+            .block-actions {
+                flex-direction: column;
+            }
+
+            .open-button {
+                width: 100%;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -219,30 +263,31 @@
         <section class="card-content">
             <div class="eyebrow">शिवपुरी जिला पोर्टल</div>
             <h1>PMUMS Application</h1>
-            <p class="intro">अपने विकासखंड का चयन करें</p>
 
             <div>
                 <label for="blockSelect" class="form-label">ब्लॉक का चयन करें</label>
-                <select id="blockSelect" class="form-select" aria-label="ब्लॉक का चयन करें">
-                    <option value="https://docs.google.com/spreadsheets/d/1Ml8_sLx9szmRnhIUfO_6HOg0fnfrjiY6zY8OMBmPseM/edit?usp=drivesdk">Shivpuri</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1yxSWY70zZjPTexbIcrbXLJ0Hvx_putZJS1fngUJ9q5w/edit?usp=drivesdk">Kolaras</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1xlsziUezR7POxDV6HE3k1350KpbOqDXsOE4yxuA_Rqc/edit?usp=drivesdk">Badarwas</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1yF7Z4cm7Ay6EHU9JH1U5Qiljb1ZNM9hp-PsmLlPtpSc/edit?usp=drivesdk">Karaira</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1jccTaBmbZRjwwpdt_pYYj41iKq-WtGQigVEcFyi0UVs/edit?usp=drivesdk">Khaniyadhana</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1o2b5PEnTUvCImpsxdpwFbbvqVfgM9lg1EcP5y4Oofx8/edit?usp=drivesdk">Pohri</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1Uw9Yss76Y4ud-UazKj1-jUzMpb9uAZGeWOhw2hMU_wU/edit?usp=drivesdk">Narvar</option>
-                    <option value="https://docs.google.com/spreadsheets/d/1A_OOwntxsX9D62TtGV3eiTHs_LLRcP1i4iKC5qmpY4k/edit?usp=drivesdk">Pichhore</option>
-                </select>
-                <button type="button" onclick="openBlockSheet()" class="btn open-button w-100">
-                    ब्लॉक की जानकारी देखें  <span aria-hidden="true">↗</span>
-                </button>
+                <div class="block-actions">
+                    <select id="blockSelect" class="form-select" aria-label="ब्लॉक का चयन करें">
+                        <option value="https://docs.google.com/spreadsheets/d/1Ml8_sLx9szmRnhIUfO_6HOg0fnfrjiY6zY8OMBmPseM/edit?usp=drivesdk">Shivpuri</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1yxSWY70zZjPTexbIcrbXLJ0Hvx_putZJS1fngUJ9q5w/edit?usp=drivesdk">Kolaras</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1xlsziUezR7POxDV6HE3k1350KpbOqDXsOE4yxuA_Rqc/edit?usp=drivesdk">Badarwas</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1yF7Z4cm7Ay6EHU9JH1U5Qiljb1ZNM9hp-PsmLlPtpSc/edit?usp=drivesdk">Karaira</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1jccTaBmbZRjwwpdt_pYYj41iKq-WtGQigVEcFyi0UVs/edit?usp=drivesdk">Khaniyadhana</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1o2b5PEnTUvCImpsxdpwFbbvqVfgM9lg1EcP5y4Oofx8/edit?usp=drivesdk">Pohri</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1Uw9Yss76Y4ud-UazKj1-jUzMpb9uAZGeWOhw2hMU_wU/edit?usp=drivesdk">Narvar</option>
+                        <option value="https://docs.google.com/spreadsheets/d/1A_OOwntxsX9D62TtGV3eiTHs_LLRcP1i4iKC5qmpY4k/edit?usp=drivesdk">Pichhore</option>
+                    </select>
+                    <button type="button" onclick="openBlockSheet()" class="btn open-button">
+                        ब्लॉक की जानकारी देखें <span aria-hidden="true">↗</span>
+                    </button>
+                </div>
             </div>
         </section>
-<div style="border: 2px solid red; padding: 10px; display: inline-block; border-radius: 5px;">
-    <footer class="card-footer" style="color: red; margin: 0;">PMUMS Team, Shivpuri</footer>
-    <p style="color: red; margin: 0;">Made By : Sanjay Jain, IT Cell, Shivpuri, 8878543227</p>
+<div class="team-footer-box">
+    <footer class="team-footer-title">PMUMS Team, Shivpuri</footer>
+    <p class="team-footer-credit">Made By : Sanjay Jain, IT Cell, Shivpuri, 8878543227</p>
 </div>
-        
+
     </main>
 
     <script>
